@@ -1,0 +1,68 @@
+/* page layout */
+body {
+ font-family: Arial, sans-serif;
+ background: #fafafa;
+ margin: 0;
+ padding: 0;
+}
+
+/* header */
+h1 {
+ text-align: center;
+ padding: 20px 0;
+ background: #333;
+ color: white;
+ margin: 0;
+}
+
+/* cuisine list container */
+.cuisine-item {
+ background: white;
+ padding: 20px;
+ margin: 20px auto;
+ width: 80%;
+ border-radius: 8px;
+ box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* cuisine title */
+.cuisine-item h2 a {
+ color: 0077cc;
+ text-decoration: none;
+}
+
+.cuisine-item h2 a:hover {
+ text-decoration: underline;
+}
+
+/* images */
+.cuisine-item img {
+ width: 250px;
+ border-radius: 6px;
+ margin-bottom: 10px;
+}
+
+/* meta info */
+.meta {
+ color: #636;
+ font-size: 14px;
+ margin-bottom: 10px;
+}
+
+/* pagination */
+.pagination {
+ text-align: center;
+ margin: 20px 0;
+}
+
+.pagination a {
+ padding: 8px 12px;
+ background: #0077cc;
+ color: white;
+ border-radius: 4px;
+ text-decoration: none;
+}
+
+.pagination a:hover {
+ background: #005fa3;
+}

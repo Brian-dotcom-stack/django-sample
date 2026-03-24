@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 STATUS_CHOICES = (
     ('draft', 'Draft'),
@@ -23,7 +24,7 @@ class Cuisine(models.Model):
                               default='food')
     slug = models.SlugField(max_length=30, unique_for_date='publish')
     desc = models.TextField()
-    pic = models.ImageField(upload_to='cuisine_pic', blank=True, null=True, )
+    pic = models.ImageField(upload_to='cuisine_pic/', blank=True, null=True, )
     author = models.ForeignKey(User,
                                related_name='cuisine_user',
                                on_delete=models.CASCADE,)
@@ -37,3 +38,11 @@ class Cuisine(models.Model):
         ordering = ('-publish',)
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('cuisine:Cuisine_detail',
+                       args=[
+                           self.slug
+                       ]
+                    )
+    

@@ -1,0 +1,24 @@
+{% load static %}
+{% extends "cuisine/base.html" %}
+{% block title %}Cuisine App{% endblock %}
+
+{% block content %}
+<h1>MY CUISINE SAMPLE APPLICATION</h1>
+
+{% for cuisine in cuisines %}
+ <h2>
+  <a href="{% url 'cuisine:cuisine_detail' cuisine.slug %}">
+   {{ cuisine.name }}</a>
+ </h2>
+
+ {% if cuisine.pic %}
+  <img src="{{ cuisine.pic.url }}" alt="{{ cuisine.name }}" width="400"
+ {% endif %}
+
+ <p class="date">
+  Published {{ cuisine.publish }} by {{ cuisine.author }}
+ </p>
+
+ <p>
+{% endfor %}
+{% endblock %}
